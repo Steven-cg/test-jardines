@@ -78,6 +78,7 @@
       },
       "Prueba.Business/1.0.0": {
         "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "Prueba.Data": "1.0.0",
           "Prueba.Entities": "1.0.0"
@@ -91,6 +92,7 @@
       },
       "Prueba.Data/1.0.0": {
         "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
         "dependencies": {
           "Prueba.Entities": "1.0.0"
         },
@@ -103,6 +105,7 @@
       },
       "Prueba.Entities/1.0.0": {
         "type": "project",
+        "framework": ".NETFramework,Version=v4.7.2",
         "compile": {
           "bin/placeholder/Prueba.Entities.dll": {}
         },

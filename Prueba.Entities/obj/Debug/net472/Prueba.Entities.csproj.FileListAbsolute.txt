@@ -1,0 +1,10 @@
+c:\Proyectos\test\Prueba.Entities\bin\Debug\net472\Prueba.Entities.dll
+c:\Proyectos\test\Prueba.Entities\bin\Debug\net472\Prueba.Entities.pdb
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.csproj.AssemblyReference.cache
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.GeneratedMSBuildEditorConfig.editorconfig
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.AssemblyInfoInputs.cache
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.AssemblyInfo.cs
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.csproj.CoreCompileInputs.cache
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.sourcelink.json
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.dll
+c:\Proyectos\test\Prueba.Entities\obj\Debug\net472\Prueba.Entities.pdb
