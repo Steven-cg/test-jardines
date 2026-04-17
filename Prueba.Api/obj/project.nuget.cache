@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "K9rwiljw06I=",
+  "success": true,
+  "projectFilePath": "c:\\Proyectos\\test\\Prueba.Api\\Prueba.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KATANA\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.9\\microsoft.aspnet.mvc.5.2.9.nupkg.sha512",
+    "C:\\Users\\KATANA\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.9\\microsoft.aspnet.razor.3.2.9.nupkg.sha512",
+    "C:\\Users\\KATANA\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.9\\microsoft.aspnet.webpages.3.2.9.nupkg.sha512",
+    "C:\\Users\\KATANA\\.nuget\\packages\\microsoft.web.infrastructure\\2.0.0\\microsoft.web.infrastructure.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

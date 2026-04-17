@@ -1,0 +1,404 @@
+{
+  "runtimeTarget": {
+    "name": ".NETFramework,Version=v4.7.2/",
+    "signature": ""
+  },
+  "compilationOptions": {
+    "defines": [
+      "TRACE",
+      "DEBUG",
+      "NETFRAMEWORK",
+      "NET472",
+      "NET20_OR_GREATER",
+      "NET30_OR_GREATER",
+      "NET35_OR_GREATER",
+      "NET40_OR_GREATER",
+      "NET45_OR_GREATER",
+      "NET451_OR_GREATER",
+      "NET452_OR_GREATER",
+      "NET46_OR_GREATER",
+      "NET461_OR_GREATER",
+      "NET462_OR_GREATER",
+      "NET47_OR_GREATER",
+      "NET471_OR_GREATER",
+      "NET472_OR_GREATER"
+    ],
+    "languageVersion": "7.3",
+    "platform": "",
+    "allowUnsafe": false,
+    "warningsAsErrors": false,
+    "optimize": false,
+    "keyFile": "",
+    "emitEntryPoint": false,
+    "xmlDoc": false,
+    "debugType": "portable"
+  },
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "Prueba.Api/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.9",
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.AspNet.WebPages": "3.2.9",
+          "Microsoft.Web.Infrastructure": "2.0.0",
+          "Prueba.Business": "1.0.0",
+          "Prueba.Entities": "1.0.0",
+          "Microsoft.CSharp": "4.0.0.0",
+          "System.Configuration": "4.0.0.0",
+          "System.Core": "4.0.0.0",
+          "System.Data": "4.0.0.0",
+          "System": "4.0.0.0",
+          "System.Drawing": "4.0.0.0",
+          "System.IO.Compression.FileSystem": "4.0.0.0",
+          "System.Numerics": "4.0.0.0",
+          "System.Runtime.Serialization": "4.0.0.0",
+          "System.Web.Abstractions": "4.0.0.0",
+          "System.Web": "4.0.0.0",
+          "System.Web.Routing": "4.0.0.0",
+          "System.Xml": "4.0.0.0",
+          "System.Xml.Linq": "4.0.0.0",
+          "mscorlib": "4.0.0.0"
+        },
+        "compile": {
+          "Prueba.Api.dll": {}
+        }
+      },
+      "Microsoft.CSharp/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/Microsoft.CSharp.dll": {}
+        }
+      },
+      "System.Configuration/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Configuration.dll": {}
+        }
+      },
+      "System.Core/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Core.dll": {}
+        }
+      },
+      "System.Data/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Data.dll": {}
+        }
+      },
+      "System/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.dll": {}
+        }
+      },
+      "System.Drawing/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Drawing.dll": {}
+        }
+      },
+      "System.IO.Compression.FileSystem/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.IO.Compression.FileSystem.dll": {}
+        }
+      },
+      "System.Numerics/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Numerics.dll": {}
+        }
+      },
+      "System.Runtime.Serialization/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Runtime.Serialization.dll": {}
+        }
+      },
+      "System.Web.Abstractions/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Web.Abstractions.dll": {}
+        }
+      },
+      "System.Web/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Web.dll": {}
+        }
+      },
+      "System.Web.Routing/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Web.Routing.dll": {}
+        }
+      },
+      "System.Xml/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Xml.dll": {}
+        }
+      },
+      "System.Xml.Linq/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/System.Xml.Linq.dll": {}
+        }
+      },
+      "mscorlib/4.0.0.0": {
+        "compile": {
+          ".NETFramework/v4.7.2/mscorlib.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.9": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.AspNet.WebPages": "3.2.9"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.9": {
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.9": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.Web.Infrastructure": "2.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/2.0.0": {
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Prueba.Business/1.0.0": {
+        "dependencies": {
+          "Prueba.Data": "1.0.0",
+          "Prueba.Entities": "1.0.0"
+        },
+        "compile": {
+          "Prueba.Business.dll": {}
+        }
+      },
+      "Prueba.Data/1.0.0": {
+        "dependencies": {
+          "Prueba.Entities": "1.0.0"
+        },
+        "compile": {
+          "Prueba.Data.dll": {}
+        }
+      },
+      "Prueba.Entities/1.0.0": {
+        "compile": {
+          "Prueba.Entities.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/": {
+      "Prueba.Api/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "5.2.9",
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.AspNet.WebPages": "3.2.9",
+          "Microsoft.Web.Infrastructure": "2.0.0",
+          "Prueba.Business": "1.0.0",
+          "Prueba.Entities": "1.0.0",
+          "Microsoft.CSharp": "4.0.0.0",
+          "System.Configuration": "4.0.0.0",
+          "System.Core": "4.0.0.0",
+          "System.Data": "4.0.0.0",
+          "System": "4.0.0.0",
+          "System.Drawing": "4.0.0.0",
+          "System.IO.Compression.FileSystem": "4.0.0.0",
+          "System.Numerics": "4.0.0.0",
+          "System.Runtime.Serialization": "4.0.0.0",
+          "System.Web.Abstractions": "4.0.0.0",
+          "System.Web": "4.0.0.0",
+          "System.Web.Routing": "4.0.0.0",
+          "System.Xml": "4.0.0.0",
+          "System.Xml.Linq": "4.0.0.0",
+          "mscorlib": "4.0.0.0"
+        },
+        "runtime": {
+          "Prueba.Api.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.9": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.AspNet.WebPages": "3.2.9"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.9": {
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.9": {
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "3.2.9",
+          "Microsoft.Web.Infrastructure": "2.0.0"
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/2.0.0": {
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Prueba.Business/1.0.0": {
+        "dependencies": {
+          "Prueba.Data": "1.0.0",
+          "Prueba.Entities": "1.0.0"
+        },
+        "runtime": {
+          "Prueba.Business.dll": {}
+        }
+      },
+      "Prueba.Data/1.0.0": {
+        "dependencies": {
+          "Prueba.Entities": "1.0.0"
+        },
+        "runtime": {
+          "Prueba.Data.dll": {}
+        }
+      },
+      "Prueba.Entities/1.0.0": {
+        "runtime": {
+          "Prueba.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Prueba.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNet.Mvc/5.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bcekKshCAh7kTWSMZPavQStSZQF/QmjEjO2gVWGITEd0/t5eRlb+ZLDE+az2qY1bZ8L6Hz0OCNeS0uzXtJcK5w==",
+      "path": "microsoft.aspnet.mvc/5.2.9",
+      "hashPath": "microsoft.aspnet.mvc.5.2.9.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Razor/3.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QOJEnEw3xp+t5lMvYR5nGCF4CfZpHqr2p8uZOBEgDZoB6r2txtSj6581YNr+/dOHjI3YRlo1QAKGQoSohbQ/KA==",
+      "path": "microsoft.aspnet.razor/3.2.9",
+      "hashPath": "microsoft.aspnet.razor.3.2.9.nupkg.sha512"
+    },
+    "Microsoft.AspNet.WebPages/3.2.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yByb721lwv8YFsx1oKA5CLKXa89XVbVMkPafS4bg/bPelBEgChq/coFBQEkA4kwcabG7AR56w3vapnoZUfr2Cw==",
+      "path": "microsoft.aspnet.webpages/3.2.9",
+      "hashPath": "microsoft.aspnet.webpages.3.2.9.nupkg.sha512"
+    },
+    "Microsoft.Web.Infrastructure/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NA6F00drSYd4HZk7QcyMRz1EEdZQQpcdnt6DfNiurNcUNsmmRDpz9db2Bc3L3Lgo455BOSwNDuNjbhDLltKGKQ==",
+      "path": "microsoft.web.infrastructure/2.0.0",
+      "hashPath": "microsoft.web.infrastructure.2.0.0.nupkg.sha512"
+    },
+    "Prueba.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prueba.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prueba.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.CSharp/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Configuration/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Core/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Data/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Drawing/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Compression.FileSystem/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Numerics/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Runtime.Serialization/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Abstractions/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Web.Routing/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Xml/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Xml.Linq/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "mscorlib/4.0.0.0": {
+      "type": "referenceassembly",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

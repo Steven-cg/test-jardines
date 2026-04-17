@@ -1,0 +1,9 @@
+c:\Proyectos\test\Prueba.Data\bin\Debug\Prueba.Data.dll
+c:\Proyectos\test\Prueba.Data\bin\Debug\Prueba.Data.pdb
+c:\Proyectos\test\Prueba.Data\bin\Debug\Prueba.Entities.dll
+c:\Proyectos\test\Prueba.Data\bin\Debug\Prueba.Entities.pdb
+c:\Proyectos\test\Prueba.Data\obj\Debug\Prueba.Data.csproj.AssemblyReference.cache
+c:\Proyectos\test\Prueba.Data\obj\Debug\Prueba.Data.csproj.CoreCompileInputs.cache
+c:\Proyectos\test\Prueba.Data\obj\Debug\Prueba.D.AAC40F61.Up2Date
+c:\Proyectos\test\Prueba.Data\obj\Debug\Prueba.Data.dll
+c:\Proyectos\test\Prueba.Data\obj\Debug\Prueba.Data.pdb
