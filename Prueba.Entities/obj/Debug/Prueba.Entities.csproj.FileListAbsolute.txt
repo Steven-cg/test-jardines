@@ -1,6 +1,0 @@
-c:\Proyectos\test\Prueba.Entities\bin\Debug\Prueba.Entities.dll
-c:\Proyectos\test\Prueba.Entities\bin\Debug\Prueba.Entities.pdb
-c:\Proyectos\test\Prueba.Entities\obj\Debug\Prueba.Entities.csproj.AssemblyReference.cache
-c:\Proyectos\test\Prueba.Entities\obj\Debug\Prueba.Entities.csproj.CoreCompileInputs.cache
-c:\Proyectos\test\Prueba.Entities\obj\Debug\Prueba.Entities.dll
-c:\Proyectos\test\Prueba.Entities\obj\Debug\Prueba.Entities.pdb
