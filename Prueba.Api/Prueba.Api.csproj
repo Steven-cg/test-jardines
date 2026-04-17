@@ -43,20 +43,27 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc">
-      <Version>5.2.9</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNet.Razor">
-      <Version>3.2.9</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNet.WebPages">
-      <Version>3.2.9</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Web.Infrastructure">
-      <Version>2.0.0</Version>
-    </PackageReference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>bin\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>bin\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>bin\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>bin\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>bin\System.Web.Helpers.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
