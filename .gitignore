@@ -7,6 +7,10 @@
 *.userosscache
 *.sln.docstates
 
+# Excluir lib del ignore para incluir las DLLs de referencia
+!lib/
+!lib/*.dll
+
 # NuGet
 packages/
 *.nuget.props
