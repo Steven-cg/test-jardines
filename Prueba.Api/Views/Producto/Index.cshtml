@@ -2,11 +2,14 @@
 @{
     var editMode = ViewBag.ProductoEdicion != null;
     var prod = ViewBag.ProductoEdicion as Prueba.Entities.Producto;
-    ViewBag.Title = editMode ? "Editando Producto" : "Gestión de Inventario";
+    ViewBag.Title = editMode ? "Editando Producto" : "Gestion de Inventario";
+
+    // Busqueda y paginacion en cliente
+    var busqueda = ViewBag.Busqueda as string ?? "";
 }
 
 <div class="row g-4">
-    <!-- Panel Izquierdo: Formulario Dinámico -->
+    <!-- Panel Izquierdo: Formulario Dinamico -->
     <div class="col-md-4">
         <div class="card shadow-sm border-0 sticky-top" style="top: 2rem;">
             <div class="card-header bg-white py-3 border-0">
@@ -22,8 +25,14 @@
                         <i class="bi bi-exclamation-triangle-fill me-2"></i> @ViewBag.Error
                     </div>
                 }
+                @if (ViewBag.Exito != null)
+                {
+                    <div class="alert alert-success p-2 small border-0 shadow-sm mb-3">
+                        <i class="bi bi-check-circle-fill me-2"></i> @ViewBag.Exito
+                    </div>
+                }
 
-                @using (Html.BeginForm(editMode ? "Actualizar" : "Guardar", "Producto", FormMethod.Post))
+                @using (Html.BeginForm(editMode ? "Actualizar" : "Guardar", "Producto", FormMethod.Post, new { id = "frmProducto" }))
                 {
                     if (editMode)
                     {
@@ -32,7 +41,7 @@
 
                     <div class="mb-3">
                         <label class="form-label small fw-bold text-muted text-uppercase">Nombre</label>
-                        <input type="text" name="Nombre" class="form-control form-control-lg border-2" 
+                        <input type="text" id="inpNombre" name="Nombre" class="form-control form-control-lg border-2"
                                value="@(editMode ? prod.Nombre : "")" placeholder="Ej: Monitor LED" required />
                     </div>
 
@@ -41,29 +50,28 @@
                             <label class="form-label small fw-bold text-muted text-uppercase">Precio</label>
                             <div class="input-group input-group-lg border-2">
                                 <span class="input-group-text bg-light">$</span>
-                                <input type="number" step="0.01" name="Precio" class="form-control" 
-                                       value="@(editMode ? prod.Precio.ToString().Replace(",",".") : "")" required />
+                                <input type="number" step="0.01" id="inpPrecio" name="Precio" class="form-control"
+                                       value="@(editMode ? prod.Precio.ToString("0.00").Replace(",",".") : "")" required />
                             </div>
                         </div>
                         <div class="col-6">
                             <label class="form-label small fw-bold text-muted text-uppercase">Stock</label>
-                            <input type="number" name="Stock" class="form-control form-control-lg border-2" 
-                                   value="@(editMode ? prod.Stock : "")" required />
+                            <input type="number" id="inpStock" name="Stock" class="form-control form-control-lg border-2"
+                                   value="@(editMode ? prod.Stock.ToString() : "")" required />
                         </div>
                     </div>
 
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn @(editMode ? "btn-warning text-dark" : "btn-primary") btn-lg fw-bold shadow-sm">
-                            <i class="bi @(editMode ? "bi-save" : "bi-check-lg")"></i> 
+                            <i class="bi @(editMode ? "bi-save" : "bi-check-lg")"></i>
                             @(editMode ? "Actualizar Cambios" : "Guardar Producto")
                         </button>
-                        
-                        @if (editMode)
-                        {
-                            <a href="@Url.Action("Index")" class="btn btn-outline-secondary btn-sm border-0">
-                                <i class="bi bi-x-circle"></i> Cancelar Edición
-                            </a>
-                        }
+
+                        <button type="button" id="btnCancelar"
+                                class="btn btn-outline-secondary btn-sm border-0 @(editMode ? "" : "d-none")"
+                                onclick="cancelarEdicion()">
+                            <i class="bi bi-x-circle"></i> Cancelar Edicion
+                        </button>
                     </div>
                 }
             </div>
@@ -73,17 +81,28 @@
     <!-- Panel Derecho: Tabla de Registros -->
     <div class="col-md-8">
         <div class="card shadow-sm border-0">
-            <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center border-0">
-                <h5 class="card-title mb-0">
-                    <i class="bi bi-grid-3x3-gap-fill me-2 text-primary"></i>Inventario Actual
-                </h5>
-                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">
-                    @Model.Count() Registros
-                </span>
+            <div class="card-header bg-white py-3 border-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="card-title mb-0">
+                        <i class="bi bi-grid-3x3-gap-fill me-2 text-primary"></i>Inventario Actual
+                    </h5>
+                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill" id="badgeTotal">
+                        @Model.Count() Registros
+                    </span>
+                </div>
+                <!-- Barra de busqueda -->
+                <div class="input-group">
+                    <span class="input-group-text bg-light border-end-0"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" id="inputBusqueda" class="form-control border-start-0 ps-0"
+                           placeholder="Buscar por nombre o ID..." oninput="filtrarTabla()" value="@busqueda" />
+                    <button class="btn btn-outline-secondary" type="button" onclick="limpiarBusqueda()" title="Limpiar">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
             </div>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-hover align-middle mb-0">
+                    <table class="table table-hover align-middle mb-0" id="tablaProductos">
                         <thead class="table-light">
                             <tr>
                                 <th class="ps-4 text-secondary small text-uppercase">ID</th>
@@ -93,19 +112,20 @@
                                 <th class="text-center pe-4 text-secondary small text-uppercase">Operaciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="tbody">
                             @if (Model != null && Model.Any())
                             {
                                 foreach (var item in Model)
                                 {
-                                    <tr class="@(editMode && prod.Id == item.Id ? "table-warning border-start border-warning border-4" : "")">
+                                    <tr class="fila-producto @(editMode && prod.Id == item.Id ? "table-warning border-start border-warning border-4" : "")"
+                                        data-nombre="@item.Nombre.ToLower()" data-id="@item.Id">
                                         <td class="ps-4 text-muted small">#@item.Id</td>
                                         <td class="fw-semibold">@item.Nombre</td>
                                         <td><span class="text-dark fw-bold">$ @item.Precio.ToString("N2")</span></td>
                                         <td>
                                             @if (item.Stock < 5)
                                             {
-                                                <span class="badge bg-danger">@item.Stock Agotándose</span>
+                                                <span class="badge bg-danger">@item.Stock Agotandose</span>
                                             }
                                             else
                                             {
@@ -114,13 +134,13 @@
                                         </td>
                                         <td class="text-center pe-4">
                                             <div class="btn-group shadow-sm rounded">
-                                                <a href="@Url.Action("Index", new { id = item.Id })" 
+                                                <a href="@Url.Action("Index", new { id = item.Id })"
                                                    class="btn btn-white btn-sm px-3 border-end" title="Editar">
                                                     <i class="bi bi-pencil text-warning"></i>
                                                 </a>
-                                                <a href="@Url.Action("Eliminar", new { id = item.Id })" 
-                                                   class="btn btn-white btn-sm px-3" title="Eliminar" 
-                                                   onclick="return confirm('¿Confirma eliminar este producto?')">
+                                                <a href="@Url.Action("Eliminar", new { id = item.Id })"
+                                                   class="btn btn-white btn-sm px-3" title="Eliminar"
+                                                   onclick="return confirm('Confirma eliminar este producto?')">
                                                     <i class="bi bi-trash text-danger"></i>
                                                 </a>
                                             </div>
@@ -140,7 +160,109 @@
                         </tbody>
                     </table>
                 </div>
+                <!-- Paginacion -->
+                <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top" id="paginacion">
+                    <small class="text-muted" id="infoPagina"></small>
+                    <nav>
+                        <ul class="pagination pagination-sm mb-0" id="paginasBtns"></ul>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    var filasPorPagina = 5;
+    var paginaActual = 1;
+
+    function cancelarEdicion() {
+        window.location.href = '@Url.Action("Index", "Producto")';
+    }
+
+    function filtrarTabla() {
+        paginaActual = 1;
+        renderizarTabla();
+    }
+
+    function limpiarBusqueda() {
+        document.getElementById('inputBusqueda').value = '';
+        paginaActual = 1;
+        renderizarTabla();
+    }
+
+    function renderizarTabla() {
+        var busqueda = document.getElementById('inputBusqueda').value.toLowerCase();
+        var filas = document.querySelectorAll('#tbody .fila-producto');
+        var filasFiltradas = [];
+
+        filas.forEach(function(fila) {
+            var nombre = fila.getAttribute('data-nombre') || '';
+            var id = fila.getAttribute('data-id') || '';
+            var coincide = nombre.indexOf(busqueda) >= 0 || id.indexOf(busqueda) >= 0;
+            fila.style.display = 'none';
+            if (coincide) filasFiltradas.push(fila);
+        });
+
+        var totalFiltradas = filasFiltradas.length;
+        var totalPaginas = Math.max(1, Math.ceil(totalFiltradas / filasPorPagina));
+        if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+
+        var inicio = (paginaActual - 1) * filasPorPagina;
+        var fin = Math.min(inicio + filasPorPagina, totalFiltradas);
+
+        filasFiltradas.forEach(function(fila, i) {
+            fila.style.display = (i >= inicio && i < fin) ? '' : 'none';
+        });
+
+        // Info
+        document.getElementById('infoPagina').textContent =
+            totalFiltradas === 0 ? 'Sin resultados' :
+            'Mostrando ' + (inicio + 1) + '-' + fin + ' de ' + totalFiltradas;
+
+        document.getElementById('badgeTotal').textContent = totalFiltradas + ' Registros';
+
+        // Botones de pagina
+        var ul = document.getElementById('paginasBtns');
+        ul.innerHTML = '';
+
+        var btnAnterior = document.createElement('li');
+        btnAnterior.className = 'page-item' + (paginaActual === 1 ? ' disabled' : '');
+        btnAnterior.innerHTML = '<a class="page-link" href="#" onclick="cambiarPagina(' + (paginaActual - 1) + ');return false;">&laquo;</a>';
+        ul.appendChild(btnAnterior);
+
+        for (var p = 1; p <= totalPaginas; p++) {
+            var li = document.createElement('li');
+            li.className = 'page-item' + (p === paginaActual ? ' active' : '');
+            li.innerHTML = '<a class="page-link" href="#" onclick="cambiarPagina(' + p + ');return false;">' + p + '</a>';
+            ul.appendChild(li);
+        }
+
+        var btnSiguiente = document.createElement('li');
+        btnSiguiente.className = 'page-item' + (paginaActual === totalPaginas ? ' disabled' : '');
+        btnSiguiente.innerHTML = '<a class="page-link" href="#" onclick="cambiarPagina(' + (paginaActual + 1) + ');return false;">&raquo;</a>';
+        ul.appendChild(btnSiguiente);
+    }
+
+    function cambiarPagina(p) {
+        var busqueda = document.getElementById('inputBusqueda').value.toLowerCase();
+        var filas = document.querySelectorAll('#tbody .fila-producto');
+        var filasFiltradas = [];
+        filas.forEach(function(fila) {
+            var nombre = fila.getAttribute('data-nombre') || '';
+            var id = fila.getAttribute('data-id') || '';
+            if (nombre.indexOf(busqueda) >= 0 || id.indexOf(busqueda) >= 0) {
+                filasFiltradas.push(fila);
+            }
+        });
+        var totalPaginas = Math.max(1, Math.ceil(filasFiltradas.length / filasPorPagina));
+        if (p < 1 || p > totalPaginas) return;
+        paginaActual = p;
+        renderizarTabla();
+    }
+
+    // Inicializar al cargar
+    document.addEventListener('DOMContentLoaded', function() {
+        renderizarTabla();
+    });
+</script>
