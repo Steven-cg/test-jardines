@@ -1,1 +1,1 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="Prueba.Api.MvcApplication" Language="C#" %>
+<%@ Application CodeBehind="Global.asax.cs" Inherits="Prueba.Api.MvcApplication, Prueba.Api" Language="C#" %>
