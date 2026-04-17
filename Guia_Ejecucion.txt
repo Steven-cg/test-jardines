@@ -1,0 +1,31 @@
+GUÍA DE EJECUCIÓN - SISTEMA DE INVENTARIO
+
+Este proyecto es una solución de mantenimiento de productos desarrollada en ASP.NET MVC 4.7.2 siguiendo una arquitectura de N-Capas.
+
+REQUISITOS PREVIOS:
+1. Microsoft SQL Server (2016 o superior).
+2. Visual Studio (2019 o 2022) con carga de trabajo "Desarrollo de ASP.NET y web".
+3. SQL Server configurado con "Autenticación Mixta".
+
+PASOS PARA LA PUESTA EN MARCHA:
+
+1. BASE DE DATOS:
+   - Abra SQL Server Management Studio (SSMS).
+   - Ejecute el archivo 'Script_BaseDatos.sql' incluido en la raíz de este proyecto.
+   - Este script creará la base de datos 'TEST_JARDINES', las tablas, procedimientos almacenados y el usuario 'prueba' con los permisos adecuados.
+
+2. CONFIGURACIÓN:
+   - Abra la solución 'Prueba.sln' en Visual Studio.
+   - Verifique en el archivo 'Web.config' del proyecto 'Prueba.Api' que el 'Data Source' coincida con el nombre de su servidor SQL (actualmente configurado como 'JARDINES32').
+
+3. EJECUCIÓN:
+   - Compile la solución (Build > Build Solution).
+   - Establezca 'Prueba.Api' como proyecto de inicio.
+   - Presione F5 para iniciar la aplicación en su navegador.
+
+CARACTERÍSTICAS IMPLEMENTADAS:
+- Operaciones CRUD completas (Crear, Listar, Editar, Eliminar) en una sola vista dinámica.
+- Validaciones en capa de negocio.
+- Manejo de excepciones y registro de errores en 'errores.log'.
+- Interfaz moderna responsiva con Bootstrap 5.
+- Separación de responsabilidades mediante librerías de clases (DAL, BLL, Entities).

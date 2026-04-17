@@ -13,8 +13,6 @@
         "packagesPath": "C:\\Users\\KATANA\\.nuget\\packages\\",
         "outputPath": "c:\\Proyectos\\test\\Prueba.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
-        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -32,6 +30,7 @@
         },
         "frameworks": {
           "net472": {
+            "targetAlias": "net472",
             "projectReferences": {
               "c:\\Proyectos\\test\\Prueba.Business\\Prueba.Business.csproj": {
                 "projectPath": "c:\\Proyectos\\test\\Prueba.Business\\Prueba.Business.csproj"
@@ -42,14 +41,41 @@
             }
           }
         },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
-        "net472": {}
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
+            "Microsoft.AspNet.Razor": {
+              "target": "Package",
+              "version": "[3.2.9, )"
+            },
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.9, )"
+            },
+            "Microsoft.Web.Infrastructure": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.101\\RuntimeIdentifierGraph.json"
+        }
       }
     },
     "c:\\Proyectos\\test\\Prueba.Business\\Prueba.Business.csproj": {

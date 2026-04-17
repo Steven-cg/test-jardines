@@ -17,15 +17,44 @@ namespace Prueba.Business {
             }
         }
 
+        public Producto Obtener(int id) {
+            try {
+                return _data.ObtenerPorId(id);
+            } catch (Exception ex) {
+                EscribirLog(ex);
+                return null;
+            }
+        }
+
         public bool Registrar(Producto p) {
             try {
-                // Validación de datos (Requisito 4): No vacíos, precio > 0
                 if (string.IsNullOrEmpty(p.Nombre) || p.Precio <= 0 || p.Stock < 0)
                     return false;
 
                 return _data.Insertar(p);
             } catch (Exception ex) {
-                EscribirLog(ex); // Registro de errores (Requisito 5)
+                EscribirLog(ex);
+                return false;
+            }
+        }
+
+        public bool Actualizar(Producto p) {
+            try {
+                if (p.Id <= 0 || string.IsNullOrEmpty(p.Nombre) || p.Precio <= 0 || p.Stock < 0)
+                    return false;
+
+                return _data.Actualizar(p);
+            } catch (Exception ex) {
+                EscribirLog(ex);
+                return false;
+            }
+        }
+
+        public bool Eliminar(int id) {
+            try {
+                return _data.Eliminar(id);
+            } catch (Exception ex) {
+                EscribirLog(ex);
                 return false;
             }
         }

@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Prueba.Entities")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Prueba.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edb6eb9962a9a0033a950c99f1b6f0a3d116a0a1")]
-[assembly: System.Reflection.AssemblyProductAttribute("Prueba.Entities")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Prueba.Entities")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56485d5901527e584e2f9b65a6c3cd5f4fd22b56")]
+[assembly: System.Reflection.AssemblyProductAttribute("Prueba.Api")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Prueba.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Generado por la clase WriteCodeFragment de MSBuild.
